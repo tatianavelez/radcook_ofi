@@ -7,10 +7,11 @@ import androidx.cardview.widget.CardView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val clothingCard = findViewById<CardView>(R.id.clothingCard)
-        clothingCard.setOnClickListener {
+        val searchCard = findViewById<CardView>(R.id.searchCard)
+        searchCard.setOnClickListener {
             val intent = Intent(this@MainActivity, search::class.java)
             startActivity(intent)
         }
