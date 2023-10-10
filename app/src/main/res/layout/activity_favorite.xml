@@ -6,21 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Forum">
+    tools:context=".Favorite">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/forumTitle"
-        android:text="Foro"
+        android:id="@+id/favoriteTitle"
+        android:text="Favoritos"
         android:textSize="36sp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_semibold"
         android:textColor="#009648"
         android:layout_centerHorizontal="true"/>
+
     <ImageView
+        android:id="@+id/favoriteImage"
         android:layout_width="500dp"
         android:layout_height="500dp"
-        android:id="@+id/forumImage"
-        android:layout_below="@id/forumTitle"
-        android:src="@drawable/foro"/>
+        android:layout_below="@id/favoriteTitle"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/favorito" />
+
 </RelativeLayout>
