@@ -22,5 +22,6 @@
         android:layout_height="500dp"
         android:id="@+id/forumImage"
         android:layout_below="@id/forumTitle"
-        android:src="@drawable/foro"/>
+        android:src="@drawable/forum"/>
+
 </RelativeLayout>
