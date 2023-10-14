@@ -13,247 +13,291 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/constraintLayout"
             android:layout_marginTop="20dp">
 
+
+            <ImageView
+                android:id="@+id/videoView0"
+                android:layout_width="172dp"
+                android:layout_height="133dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/agucate"
+                app:layout_constraintBottom_toTopOf="@+id/row1"
+                app:layout_constraintEnd_toStartOf="@+id/radcookImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/radcookImage"
                 android:layout_width="161dp"
                 android:layout_height="152dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="12dp"
                 android:src="@drawable/logo"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.848"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
+                android:id="@+id/row1"
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:id="@+id/row1"
-                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
+                android:orientation="horizontal"
                 android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/radcookImage">
 
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:id="@+id/searchCard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:id="@+id/searchName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/searchImage"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
                             android:text="Buscar"
-                            android:textSize="20sp"
                             android:textColor="#009648"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/searchImage"/>
+                            android:textSize="20sp" />
+
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
                             android:id="@+id/searchImage"
-                            android:src="@drawable/buscar"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
+                            android:src="@drawable/buscar" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:id="@+id/forumCard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:id="@+id/forumName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/forumImage"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
                             android:text="Foro"
-                            android:textSize="20sp"
                             android:textColor="#009648"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/forumImage"/>
+                            android:textSize="20sp" />
+
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
                             android:id="@+id/forumImage"
-                            android:src="@drawable/forum"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
+                            android:src="@drawable/forum" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
+
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="175dp"
                 android:id="@+id/row2"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/row1">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/enterrecipeCard"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/enterrecipeName"
-                            android:text="Crear receta"
-                            android:textSize="20sp"
-                            android:textColor="#009648"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/enterrecipeImage"/>
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:id="@+id/enterrecipeImage"
-                            android:src="@drawable/increar"
-                            android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/enteringredientCard"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/enteringredientName"
-                            android:text="Ingredientes"
-                            android:textSize="20sp"
-                            android:textColor="#009648"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/enteringredientImage"/>
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:id="@+id/enteringredientImage"
-                            android:src="@drawable/ingrediente"
-                            android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="175dp"
-                android:id="@+id/row3"
-                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
+                android:orientation="horizontal"
                 android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/row2">
+                app:layout_constraintTop_toBottomOf="@id/row1">
+
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/enterrecipeCard"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/favoritetCard"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <TextView
+                            android:id="@+id/enterrecipeName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/favoriteName"
-                            android:text="Favoritos"
-                            android:textSize="20sp"
-                            android:textColor="#009648"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/enterrecipeImage"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/favoriteImage"/>
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Crear receta"
+                            android:textColor="#009648"
+                            android:textSize="20sp" />
+
                         <ImageView
+                            android:id="@+id/enterrecipeImage"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:id="@+id/favoriteImage"
-                            android:src="@drawable/favorito"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
+                            android:src="@drawable/increar" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/enteringredientCard"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/Card"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    app:cardElevation="20dp"
-                    app:cardCornerRadius="20dp">
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <TextView
+                            android:id="@+id/enteringredientName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/grocName"
-                            android:text="Despensa"
-                            android:textSize="20sp"
-                            android:textColor="@color/teal_700"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/enteringredientImage"
                             android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/grocImage"/>
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Ingredientes"
+                            android:textColor="#009648"
+                            android:textSize="20sp" />
+
                         <ImageView
+                            android:id="@+id/enteringredientImage"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:id="@+id/grocImage"
-                            android:src="@drawable/buscar"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
-                            android:layout_centerHorizontal="true"/>
+                            android:src="@drawable/ingrediente" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/favoritetCard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/favoriteName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/favoriteImage"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Favoritos"
+                            android:textColor="#009648"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/favoriteImage"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/favorito" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Card"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/grocName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/grocImage"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Despensa"
+                            android:textColor="@color/teal_700"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/grocImage"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/buscar" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
