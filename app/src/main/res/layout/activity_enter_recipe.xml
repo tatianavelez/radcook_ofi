@@ -22,5 +22,5 @@
         android:layout_height="500dp"
         android:id="@+id/enterrecipeImage"
         android:layout_below="@id/enterrecipeTitle"
-        android:src="@drawable/increar"/>
+        android:src="@drawable/ingresarreceta"/>
 </RelativeLayout>
