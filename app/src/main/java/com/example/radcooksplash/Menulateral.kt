@@ -10,6 +10,62 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import androidx.cardview.widget.CardView
+
+class dasboard : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_menulateral)
+
+        //search
+        val searchCard = findViewById<CardView>(R.id.searchCard)
+        searchCard.setOnClickListener()
+        {
+            val intent = Intent(this@dasboard, search::class.java)
+            startActivity(intent)
+        }
+
+        //foro
+        val forumCard = findViewById<CardView>(R.id.forumCard)
+        forumCard.setOnClickListener()
+        {
+            val intent = Intent(this@dasboard, Forum::class.java)
+            startActivity(intent)
+        }
+
+        //ingresar receta
+        val enterrecipeCard = findViewById<CardView>(R.id.enterrecipeCard)
+        enterrecipeCard.setOnClickListener()
+        {
+            val intent = Intent(this@dasboard, EnterRecipe::class.java)
+            startActivity(intent)
+        }
+
+        //ingresar ingrediente
+
+        val enteringredientCard = findViewById<CardView>(R.id.enteringredientCard)
+        enteringredientCard.setOnClickListener()
+        {
+            val intent = Intent(this@dasboard, Ingredient::class.java)
+            startActivity(intent)
+        }
+
+        //favoritos
+        val favoriteCard = findViewById<CardView>(R.id.favoritetCard)
+        favoriteCard.setOnClickListener()
+        {
+            val intent = Intent(this@dasboard, Favorite::class.java)
+            startActivity(intent)
+        }
+
+
+    }
+}
+
+
 class Menulateral : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout

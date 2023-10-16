@@ -38,7 +38,7 @@ package="com.example.radcooksplash">
 
 
     <activity
-        android:name=".Dasboard"
+        android:name=".dasboard"
         android:exported="false" />
     <activity
         android:name=".Favorite"
