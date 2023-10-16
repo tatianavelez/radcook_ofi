@@ -14,22 +14,32 @@
         android:theme="@style/Base.Theme.RadcookSplash"
         tools:targetApi="31">
         <activity
-            android:name=".Logout"
+            android:name=".Favoritos"
             android:exported="false" />
         <activity
-            android:name=".Menulateral"
-            android:exported="true"
-            android:theme="@style/Theme.Menulateral">
+            android:name=".Ingredientes"
+            android:exported="false" />
+        <activity
+            android:name=".CrearReceta"
+            android:exported="false" />
+        <activity
+            android:name=".Foro"
+            android:exported="false" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
+        <activity
+            android:name=".Menulateral"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -52,20 +62,8 @@
             android:name=".Forum"
             android:exported="false" />
         <activity
-            android:name=".search"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

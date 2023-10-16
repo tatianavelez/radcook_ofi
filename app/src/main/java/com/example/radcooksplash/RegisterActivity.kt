@@ -1,5 +1,6 @@
 package com.example.radcooksplash
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,7 +13,8 @@ class RegisterActivity : AppCompatActivity() {
 
         val registerButton = findViewById<Button>(R.id.registerButton)
         registerButton.setOnClickListener {
-            // Implementa el código para el proceso de registro aquí
+          val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 

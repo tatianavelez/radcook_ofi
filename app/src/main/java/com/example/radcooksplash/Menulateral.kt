@@ -21,12 +21,12 @@ class dasboard : AppCompatActivity() {
         setContentView(R.layout.activity_menulateral)
 
         //search
-        val searchCard = findViewById<CardView>(R.id.searchCard)
+      /*  val searchCard = findViewById<CardView>(R.id.searchCard)
         searchCard.setOnClickListener()
         {
             val intent = Intent(this@dasboard, search::class.java)
             startActivity(intent)
-        }
+        }*/
 
         //foro
         val forumCard = findViewById<CardView>(R.id.forumCard)
