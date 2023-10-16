@@ -1,5 +1,6 @@
 package com.example.radcooksplash
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,7 +11,8 @@ class LoginActivity : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.loginButton)
         loginButton.setOnClickListener {
-            // Implementa el código para el proceso de inicio de sesión aquí
+          val intent = Intent(this, Menulateral::class.java)
+            startActivity(intent)
         }
     }
 }

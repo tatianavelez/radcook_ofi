@@ -1,10 +1,8 @@
 package com.example.radcooksplash
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.cardview.widget.CardView
 import android.widget.Button
 import android.widget.ImageView
 import com.bumptech.glide.Glide

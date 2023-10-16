@@ -68,6 +68,7 @@ class dasboard : AppCompatActivity() {
 
 class Menulateral : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+
     private lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,7 +100,14 @@ class Menulateral : AppCompatActivity(), NavigationView.OnNavigationItemSelected
             .replace(R.id.fragment_container, ShareFragment()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, AboutFragment()).commit()
-            R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()}
+           R.id.nav_logout -> {
+
+               val intent = Intent(this, MainActivity::class.java)
+
+               // Iniciar la nueva actividad
+               startActivity(intent)
+
+           }}
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
         }
