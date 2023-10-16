@@ -1,58 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".search"
-    android:id="@+id/container"
-    >
-
+    tools:context=".search">
 
     <TextView
         android:id="@+id/idTVHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_margin="8dp"
         android:gravity="center"
         android:padding="4dp"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textColor="@color/purple_700"
+        android:textColor="#009846"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idRVCourses"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/idTVHeading"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchTitle"
-        android:text="Buscar"
-        android:textSize="36sp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:textColor="#009648"
-        android:layout_centerHorizontal="true"/>
-
-    <ImageView
-        android:id="@+id/searchImage"
-        android:layout_width="500dp"
-        android:layout_height="500dp"
-        android:layout_below="@id/searchTitle"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/buscar" />
+    <!--on below line we are creating a recycler view-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVCourses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idTVHeading"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </RelativeLayout>
+
+
+
+
+
+

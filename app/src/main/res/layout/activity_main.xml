@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="200dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -22,54 +22,62 @@
 
             <ImageView
                 android:id="@+id/myImageView"
-                android:layout_width="192dp"
-                android:layout_height="116dp"
+                android:layout_width="307dp"
+                android:layout_height="131dp"
                 android:layout_gravity="center"
                 android:src="@drawable/logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/gifImageView"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="16dp" />
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="30dp" />
 
-            <ImageView
-                android:id="@+id/gifImageView"
-                android:layout_width="115dp"
-                android:layout_height="146dp"
-                app:srcCompat="@drawable/agucate"
+
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="204dp" />
+                tools:layout_editor_absoluteY="334dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/gifImageView"
+                    android:layout_width="115dp"
+                    android:layout_height="146dp"
+                    app:srcCompat="@drawable/agucate"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="73dp"
+                    tools:layout_editor_absoluteY="181dp" />
+
+                <Button
+                    android:id="@+id/loginMainButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="#009846"
+                    android:text="Iniciar sesión"
+                    tools:layout_editor_absoluteX="185dp"
+                    tools:layout_editor_absoluteY="282dp" />
+
+                <Button
+                    android:id="@+id/registerMainButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="#009846"
+                    android:text="Registrarse"
+                    tools:layout_editor_absoluteX="195dp"
+                    tools:layout_editor_absoluteY="364dp" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-
-        <Button
-
-            android:id="@+id/registerMainButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#009846"
-            android:text="Registrarse" />
-
-        <Button
-            android:id="@+id/loginMainButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:backgroundTint="#009846"
-            android:text="Iniciar sesión" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

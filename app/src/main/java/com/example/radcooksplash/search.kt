@@ -9,9 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
 
-
 class search : AppCompatActivity() {
 
+    // on below line we are creating variables for
+    // our swipe to refresh layout, recycler view,
+    // adapter and list.
     lateinit var courseRV: RecyclerView
     lateinit var courseRVAdapter: CourseRVAdapter
     lateinit var courseList: ArrayList<CourseRVModal>
@@ -26,11 +28,12 @@ class search : AppCompatActivity() {
         courseRVAdapter = CourseRVAdapter(courseList)
         courseRV.adapter = courseRVAdapter
 
+
         courseList.add(CourseRVModal("Pollo", R.drawable.receta1))
-        courseList.add(CourseRVModal("Papas", R.drawable.receta2))
-        courseList.add(CourseRVModal("Salsa", R.drawable.receta3))
-        courseList.add(CourseRVModal("Criollo", R.drawable.receta4))
-        courseList.add(CourseRVModal("Galletas", R.drawable.receta5))
+        courseList.add(CourseRVModal("Arroz", R.drawable.receta2))
+        courseList.add(CourseRVModal("Papas", R.drawable.receta3))
+        courseList.add(CourseRVModal("Galleta", R.drawable.receta4))
+        courseList.add(CourseRVModal("Jugo", R.drawable.receta5))
 
         courseRVAdapter.notifyDataSetChanged()
 
@@ -76,6 +79,7 @@ class search : AppCompatActivity() {
 
             Toast.makeText(this, "No Data Found..", Toast.LENGTH_SHORT).show()
         } else {
+
             courseRVAdapter.filterList(filteredlist)
         }
     }

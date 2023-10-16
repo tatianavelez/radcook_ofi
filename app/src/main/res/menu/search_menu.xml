@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <item
         android:id="@+id/actionSearch"
-        android:icon="@drawable/logo"
+        android:icon="@android:drawable/ic_menu_search"
         android:title="Search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
 
 </menu>
+
 
