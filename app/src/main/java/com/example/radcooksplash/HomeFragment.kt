@@ -1,5 +1,6 @@
 package com.example.radcooksplash
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ class HomeFragment : Fragment() {
 
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,6 +43,8 @@ class HomeFragment : Fragment() {
         val enterrecipeCard = rootView.findViewById<CardView>(R.id.enterrecipeCard)
         val enteringredientCard = rootView.findViewById<CardView>(R.id.enteringredientCard)
         val favoritetCard = rootView.findViewById<CardView>(R.id.favoritetCard)
+        val shoppingCard = rootView.findViewById<CardView>(R.id.shoppingCard)
+
 
         searchCard.setOnClickListener {
             val context = requireContext()
@@ -65,6 +69,12 @@ class HomeFragment : Fragment() {
         favoritetCard.setOnClickListener {
             val context = requireContext()
             val intent = Intent(context, Favorite::class.java)
+            context.startActivity(intent)
+        }
+
+        shoppingCard.setOnClickListener {
+            val context = requireContext()
+            val intent = Intent(context, Shopping::class.java)
             context.startActivity(intent)
         }
         context
