@@ -16,7 +16,7 @@
         <activity
             android:name=".Shopping"
             android:exported="false" />
-        <activity
+        <!--<activity
             android:name=".Favoritos"
             android:exported="false" />
         <activity
@@ -27,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".Foro"
-            android:exported="false" />
+            android:exported="false" />!-->
         <activity
             android:name=".Search"
             android:exported="false" />
