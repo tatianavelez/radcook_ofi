@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/fondonuevo"
     tools:context=".EnterRecipe">
     <TextView
         android:layout_width="wrap_content"
@@ -17,10 +18,16 @@
         android:fontFamily="@font/poppins_semibold"
         android:textColor="#009648"
         android:layout_centerHorizontal="true"/>
+
     <ImageView
-        android:layout_width="500dp"
-        android:layout_height="500dp"
         android:id="@+id/enterrecipeImage"
+        android:layout_width="93dp"
+        android:layout_height="111dp"
         android:layout_below="@id/enterrecipeTitle"
-        android:src="@drawable/ingresarreceta"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="293dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="25dp"
+        android:src="@drawable/ingresarreceta" />
 </RelativeLayout>
