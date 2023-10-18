@@ -23,7 +23,8 @@
         android:textSize="30sp"
         tools:ignore="UnknownId" />
 
-    <androidx.appcompat.widget.SearchView
+    <SearchView
+
         android:layout_width="354dp"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"
@@ -42,9 +43,9 @@
         android:layout_above="@+id/idiomaButton"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="83dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="-118dp"
         android:backgroundTint="#009846"
         android:text="Tu cuenta" />
 
@@ -55,9 +56,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="83dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginBottom="455dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="465dp"
         android:backgroundTint="#009846"
         android:text="Idioma de la aplicacion " />
 
@@ -68,9 +69,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="87dp"
-        android:layout_marginEnd="86dp"
-        android:layout_marginBottom="372dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="544dp"
         android:backgroundTint="#009846"
         android:text="Tema " />
 

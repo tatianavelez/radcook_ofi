@@ -1,15 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     tools:context=".AboutFragment">
+
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="About Us Fragment"
-    android:textSize="30sp"
-    android:layout_centerInParent="true"
-    android:textColor="@color/colorPrimary"/>
-    </RelativeLayout>
+        android:layout_width="292dp"
+        android:layout_height="72dp"
+        android:layout_above="@+id/myTextView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Quienes somos"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/myTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="267dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text=" Radcook es una aplicaion de recetas
+
+
+              con lo que tienes en tu despensa,
+        te agracedemos por confiar en nosotros "
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="223dp"
+        android:layout_marginBottom="87dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Conoce nuestra mascota RAD"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="241dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="214dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/agucate"
+        tools:ignore="MissingConstraints" />
+
+
+</RelativeLayout>
