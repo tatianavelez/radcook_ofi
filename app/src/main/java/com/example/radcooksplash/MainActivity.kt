@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         val registerButton = findViewById<Button>(R.id.registerMainButton)
         val loginButton = findViewById<Button>(R.id.loginMainButton)
+
         val imagengif= findViewById<ImageView>(R.id.gifImageView)
 
         Glide.with(this).asGif().load(R.drawable.agucate).into(imagengif);

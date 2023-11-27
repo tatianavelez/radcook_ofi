@@ -45,21 +45,32 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="248dp" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout1"
+        android:layout_width="286dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="100dp"
+        android:padding="8dp">
 
-    <ImageView
-        android:id="@+id/gifImageView"
-        android:layout_width="152dp"
-        android:layout_height="178dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/logingif" />
+        <ImageView
+            android:id="@+id/gifImageView2"
+            android:layout_width="152dp"
+            android:layout_height="178dp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logingif"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#009846"
         android:text="Iniciar sesión"
         tools:ignore="MissingConstraints"
