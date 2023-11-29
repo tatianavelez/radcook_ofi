@@ -41,9 +41,8 @@ class HomeFragment : Fragment() {
         val searchCard = rootView.findViewById<CardView>(R.id.searchCard)
         val forumCard = rootView.findViewById<CardView>(R.id.forumCard)
         val enterrecipeCard = rootView.findViewById<CardView>(R.id.enterrecipeCard)
-        val enteringredientCard = rootView.findViewById<CardView>(R.id.enteringredientCard)
         val favoritetCard = rootView.findViewById<CardView>(R.id.favoritetCard)
-        val shoppingCard = rootView.findViewById<CardView>(R.id.shoppingCard)
+
 
 
         searchCard.setOnClickListener {
@@ -61,22 +60,13 @@ class HomeFragment : Fragment() {
             val intent = Intent(context, EnterRecipe::class.java)
             context.startActivity(intent)
         }
-        enteringredientCard.setOnClickListener {
-            val context = requireContext()
-            val intent = Intent(context, Ingredient::class.java)
-            context.startActivity(intent)
-        }
+
         favoritetCard.setOnClickListener {
             val context = requireContext()
             val intent = Intent(context, Favorite::class.java)
             context.startActivity(intent)
         }
 
-        shoppingCard.setOnClickListener {
-            val context = requireContext()
-            val intent = Intent(context, Shopping::class.java)
-            context.startActivity(intent)
-        }
         context
         return rootView
     }

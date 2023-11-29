@@ -21,12 +21,12 @@ class dasboard : AppCompatActivity() {
         setContentView(R.layout.activity_menulateral)
 
         //search
-      /*  val searchCard = findViewById<CardView>(R.id.searchCard)
+      val searchCard = findViewById<CardView>(R.id.searchCard)
         searchCard.setOnClickListener()
         {
-            val intent = Intent(this@dasboard, search::class.java)
+            val intent = Intent(this@dasboard, Search::class.java)
             startActivity(intent)
-        }*/
+        }
 
         //foro
         val forumCard = findViewById<CardView>(R.id.forumCard)
@@ -41,15 +41,6 @@ class dasboard : AppCompatActivity() {
         enterrecipeCard.setOnClickListener()
         {
             val intent = Intent(this@dasboard, EnterRecipe::class.java)
-            startActivity(intent)
-        }
-
-        //ingresar ingrediente
-
-        val enteringredientCard = findViewById<CardView>(R.id.enteringredientCard)
-        enteringredientCard.setOnClickListener()
-        {
-            val intent = Intent(this@dasboard, Ingredient::class.java)
             startActivity(intent)
         }
 

@@ -6,28 +6,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fondonuevo"
-    tools:context=".EnterRecipe">
+    tools:context=".EnterRecipe"
+    android:background="@drawable/logom">
+
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/enterrecipeTitle"
-        android:text="Crear receta"
-        android:textSize="36sp"
-        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_semibold"
-        android:textColor="#009648"
-        android:layout_centerHorizontal="true"/>
+        android:text="Crea Tu Receta"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
 
     <ImageView
-        android:id="@+id/enterrecipeImage"
-        android:layout_width="93dp"
-        android:layout_height="111dp"
-        android:layout_below="@id/enterrecipeTitle"
+        android:id="@+id/gifImageView4"
+        android:layout_width="157dp"
+        android:layout_height="166dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="107dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/registrogif"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="281dp"
+        android:layout_height="101dp"
+        android:layout_below="@+id/title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="293dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="25dp"
-        android:src="@drawable/ingresarreceta" />
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="61dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteRecipe"
+            android:layout_width="237dp"
+            android:layout_height="94dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Tipo De Receta"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <EditText
+        android:id="@+id/createIngredientes"
+        android:layout_width="300dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="203dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="Ingredientes"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="248dp" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="300dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="203dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="Descripcion de tu receta"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="248dp" />
+
+    <Button
+        android:id="@+id/crearButton"
+        android:layout_width="188dp"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="215dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#009846"
+        android:text="Crea Tu Receta"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-52dp"
+        tools:layout_editor_absoluteY="512dp" />
+
 </RelativeLayout>
