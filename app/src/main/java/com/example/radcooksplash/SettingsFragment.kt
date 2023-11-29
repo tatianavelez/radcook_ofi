@@ -1,10 +1,12 @@
 package com.example.radcooksplash
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +28,8 @@ class SettingsFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+
         }
     }
 
@@ -33,9 +37,21 @@ class SettingsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
+
+        val profileButton: Button = rootView.findViewById(R.id.profileButton)
+        profileButton.setOnClickListener {
+            // Reemplazar el fragmento actual con el nuevo fragmento 'ProfileFragment'
+            val profileFragment = ProfileFragment()
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, profileFragment)
+            transaction.addToBackStack(null) // Opcional: añade este fragmento a la pila de retroceso
+            transaction.commit()
+        }
+
+        return rootView
     }
+
 
     companion object {
         /**

@@ -13,26 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.RadcookSplash"
         tools:targetApi="31">
-        <activity
-            android:name=".Profile"
-            android:exported="false" />
-        <activity
-            android:name=".Shopping"
-            android:exported="false" />
-        <!--
-<activity
-            android:name=".Favoritos"
-            android:exported="false" />
-        <activity
-            android:name=".Ingredientes"
-            android:exported="false" />
-        <activity
-            android:name=".CrearReceta"
-            android:exported="false" />
-        <activity
-            android:name=".Foro"
-            android:exported="false" />!
-        -->
+
+
         <activity
             android:name=".Search"
             android:exported="false" />
@@ -60,8 +42,8 @@
         <activity
             android:name=".Favorite"
             android:exported="false" />
-        <activity
-            android:name=".Ingredient"
+        <fragment
+            android:name=".ProfileFragment"
             android:exported="false" />
         <activity
             android:name=".EnterRecipe"

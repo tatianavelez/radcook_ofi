@@ -44,7 +44,6 @@ class HomeFragment : Fragment() {
         val favoritetCard = rootView.findViewById<CardView>(R.id.favoritetCard)
 
 
-
         searchCard.setOnClickListener {
             val context = requireContext()
             val intent = Intent(context, Search::class.java)

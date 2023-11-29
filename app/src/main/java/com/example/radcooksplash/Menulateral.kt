@@ -21,7 +21,7 @@ class dasboard : AppCompatActivity() {
         setContentView(R.layout.activity_menulateral)
 
         //search
-      val searchCard = findViewById<CardView>(R.id.searchCard)
+        val searchCard = findViewById<CardView>(R.id.searchCard)
         searchCard.setOnClickListener()
         {
             val intent = Intent(this@dasboard, Search::class.java)
@@ -63,6 +63,7 @@ class Menulateral : AppCompatActivity(), NavigationView.OnNavigationItemSelected
     private lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_menulateral)
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -74,6 +75,7 @@ class Menulateral : AppCompatActivity(), NavigationView.OnNavigationItemSelected
 
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, HomeFragment()).commit()
@@ -82,16 +84,22 @@ class Menulateral : AppCompatActivity(), NavigationView.OnNavigationItemSelected
         }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
          when (item.itemId) {
              R.id.nav_home -> supportFragmentManager.beginTransaction()
              .replace(R.id.fragment_container, HomeFragment()).commit()
+
              R.id.nav_settings -> supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, SettingsFragment()).commit()
+
             R.id.nav_share -> supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, ShareFragment()).commit()
+
             R.id.nav_about -> supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, AboutFragment()).commit()
-           R.id.nav_logout -> {
+
+
+             R.id.nav_logout -> {
 
                val intent = Intent(this, MainActivity::class.java)
 

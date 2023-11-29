@@ -1,6 +1,7 @@
 package com.example.radcooksplash
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
@@ -18,13 +19,14 @@ class EnterRecipe : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_recipe)
 
+        //imagen gif para tener movimiento
         val imagengif= findViewById<ImageView>(R.id.gifImageView4)
         Glide.with(this).asGif().load(R.drawable.registrogif).into(imagengif);
+
 
         val autoCompleteRecipe = findViewById<AutoCompleteTextView>(R.id.autoCompleteRecipe)
         val editTextCantidad = findViewById<EditText>(R.id.createIngredientes)
         val btnAgregarIngrediente = findViewById<Button>(R.id.crearButton)
-
 
         // tipo de recetas
         val items = listOf(

@@ -47,7 +47,8 @@
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="-118dp"
         android:backgroundTint="#009846"
-        android:text="Tu cuenta" />
+        android:text="Tu cuenta"
+        />
 
     <Button
         android:id="@+id/idiomaButton"
