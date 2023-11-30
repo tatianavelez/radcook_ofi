@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +39,12 @@ class SettingsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
+
+       // val imagengif= rootView.findViewById<ImageView>(R.id.gifImageView1)
+       // Glide.with(this).asGif().load(R.drawable.settingsgif).into(imagengif)
+
 
         val profileButton: Button = rootView.findViewById(R.id.profileButton)
         profileButton.setOnClickListener {
