@@ -42,17 +42,18 @@ class SettingsFragment : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
 
-       // val imagengif= rootView.findViewById<ImageView>(R.id.gifImageView1)
-       // Glide.with(this).asGif().load(R.drawable.settingsgif).into(imagengif)
+       val imagengif= rootView.findViewById<ImageView>(R.id.gifImageView)
+        Glide.with(this).asGif().load(R.drawable.settingsgif).into(imagengif)
 
 
         val profileButton: Button = rootView.findViewById(R.id.profileButton)
         profileButton.setOnClickListener {
-            // Reemplazar el fragmento actual con el nuevo fragmento 'ProfileFragment'
+
+            // se llama a ProfileFragment
             val profileFragment = ProfileFragment()
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, profileFragment)
-            transaction.addToBackStack(null) // Opcional: añade este fragmento a la pila de retroceso
+            transaction.addToBackStack(null)
             transaction.commit()
         }
 
