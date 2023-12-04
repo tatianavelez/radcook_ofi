@@ -13,8 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.RadcookSplash"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".Ingredient"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
         <activity
             android:name=".Search"
             android:exported="false" />
