@@ -1,6 +1,6 @@
 package com.example.radcooksplash
 
-import ResetPasswordActivity
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -33,9 +33,7 @@ class LoginActivity : AppCompatActivity() {
         Glide.with(this).asGif().load(R.drawable.logingif).into(imagengif)
 
         fun forgotPasswordClicked(view: View) {
-            // Aquí se inicia una nueva actividad para restablecer la contraseña
-            val intent = Intent(this, ResetPasswordActivity::class.java)
-            startActivity(intent)
+
         }
 
         // Configurar el listener para el botón de inicio de sesión

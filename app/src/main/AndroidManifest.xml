@@ -16,9 +16,7 @@
         <activity
             android:name=".Ingredient"
             android:exported="false" />
-        <activity
-            android:name=".ResetPassword"
-            android:exported="false" />
+
         <activity
             android:name=".Search"
             android:exported="false" />
@@ -31,6 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Menulateral"
             android:exported="false" />
@@ -46,9 +45,7 @@
         <activity
             android:name=".Favorite"
             android:exported="false" />
-        <activity
-            android:name=".ProfileFragment"
-            android:exported="false" />
+
         <activity
             android:name=".EnterRecipe"
             android:exported="false" />
