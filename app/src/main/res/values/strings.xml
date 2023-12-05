@@ -10,11 +10,11 @@
     <string name="title_notifications">Notifications</string>
 
 
-    <string name="profile_image">Descripción de la imagen de perfil</string>
-    <string name="change_profile_picture">Cambiar imagen de perfil</string>
-    <string name="enter_name">Ingresa tu nombre</string>
-    <string name="enter_email">Ingresa tu correo electrónico</string>
-    <string name="enter_phone">Ingresa tu número de teléfono</string>
+        <string name="profile_image">Descripción de la imagen de perfil</string>
+        <string name="change_profile_picture">Cambiar imagen de perfil</string>
+        <string name="enter_name">Ingresa tu nombre</string>
+        <string name="enter_email">Ingresa tu correo electrónico</string>
+        <string name="enter_phone">Ingresa tu número de teléfono</string>
 
 
 </resources>

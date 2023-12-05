@@ -43,6 +43,15 @@
         android:padding="8dp"
         android:layout_margin="16dp"/>
 
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="@string/enter_phone"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="8dp"
+        android:layout_margin="16dp"/>
 
 
 

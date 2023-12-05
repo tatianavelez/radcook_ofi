@@ -6,7 +6,9 @@ import android.telephony.TelephonyManager.UssdResponseCallback
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.radcooksplash.Models.Login
 import com.example.radcooksplash.Models.Register
+import com.example.radcooksplash.response.loginResponse
 import com.example.radcooksplash.response.registerResponse
 import com.example.radcooksplash.service.RetrofitClient
 import kotlinx.coroutines.launch
@@ -41,6 +43,18 @@ class ViewModel(application: Application): AndroidViewModel(application) {
             })
 
 
+        }
+    }
+
+    fun login (datos: Login, onResponseCallback: (loginResponse?)-> Unit){
+        viewModelScope.launch {
+            val call = RetrofitClient.webService.login(datosLogin)
+            call.enqueve(object : Callback<loginResponse>{
+                override fun onResponse(
+                    call: Call <loginResponse>,
+                    response: Response<loginResponse>
+                ){
+                )
         }
     }
 }
