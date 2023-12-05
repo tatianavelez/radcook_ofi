@@ -6,8 +6,10 @@ import android.telephony.TelephonyManager.UssdResponseCallback
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.radcooksplash.Models.Ingredient
 import com.example.radcooksplash.Models.Login
 import com.example.radcooksplash.Models.Register
+import com.example.radcooksplash.response.IngredientResponse
 import com.example.radcooksplash.response.loginResponse
 import com.example.radcooksplash.response.registerResponse
 import com.example.radcooksplash.service.RetrofitClient
@@ -53,8 +55,20 @@ class ViewModel(application: Application): AndroidViewModel(application) {
                 override fun onResponse(
                     call: Call <loginResponse>,
                     response: Response<loginResponse>
-                ){
+                ){}}
                 )
         }
     }
+
+    fun CreateIngredient (datos: Ingredient, onResponseCallback: (IngredientResponse?)-> Unit){
+        viewModelScope.launch {
+            val api = RetrofitClient.webService.Ingredient(datos)
+            api.enqueue(object: Callback<IngredientResponse> {
+
+
+            }
+        }
+
+    }
+
 }
