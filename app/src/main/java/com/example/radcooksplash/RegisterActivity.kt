@@ -3,10 +3,12 @@ package com.example.radcooksplash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.radcooksplash.Models.Register
 import com.example.radcooksplash.databinding.ActivityIngredientBinding
@@ -51,7 +53,7 @@ class RegisterActivity : AppCompatActivity() {
         etConfirmPassword = findViewById(R.id.etConfirmPassword)
 
         // Validar que los campos no estén vacíos
-        if(etName.text.toString().isEmpty() || etEmail.text.toString().isEmpty() || etPassword.text.toString().isEmpty() || etConfirmPassword.text.toString().isEmpty()){
+        //if(etName.text.toString().isEmpty() || etEmail.text.toString().isEmpty() || etPassword.text.toString().isEmpty() || etConfirmPassword.text.toString().isEmpty()){
             //Validar que las contraseñas coincidan
             if(etPassword.text != etConfirmPassword.text) {
                 val DatosRegistro = Register(
@@ -60,9 +62,11 @@ class RegisterActivity : AppCompatActivity() {
                     contraseña = etPassword.text.toString(),
                     Confirmarcontraseña = etConfirmPassword.text.toString(),
                 )
+                viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
                 viewModel.registrar(DatosRegistro){respuesta ->
                     val res = respuesta?.status.toString()
+                    Log.d("Respuesta api", "$res")
                     if(res == "ok"){
                         Toast.makeText(this,"registro exitoso", Toast.LENGTH_SHORT).show()
                     }else{
@@ -75,9 +79,7 @@ class RegisterActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             }
-        }else{
-            Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
-        }
+
 
 
 

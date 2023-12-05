@@ -1,5 +1,6 @@
 package com.example.radcooksplash.viewModel
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.telephony.TelephonyManager.UssdResponseCallback
 import android.util.Log
@@ -15,6 +16,7 @@ import retrofit2.Response
 
 class ViewModel(application: Application): AndroidViewModel(application) {
 
+    @SuppressLint("SuspiciousIndentation")
     fun registrar(datos:Register, onResponseCallback: (registerResponse?)-> Unit){
         viewModelScope.launch {
         val api = RetrofitClient.webService.Registrar(datos)
