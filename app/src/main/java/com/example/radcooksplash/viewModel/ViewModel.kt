@@ -6,8 +6,10 @@ import android.telephony.TelephonyManager.UssdResponseCallback
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.radcooksplash.Models.Ingredient
 import com.example.radcooksplash.Models.Login
 import com.example.radcooksplash.Models.Register
+import com.example.radcooksplash.response.IngredientResponse
 import com.example.radcooksplash.response.loginResponse
 import com.example.radcooksplash.response.registerResponse
 import com.example.radcooksplash.service.RetrofitClient
@@ -46,26 +48,27 @@ class ViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    fun initSeccion (datosLogin: Login, onResponseCallback: (loginResponse?)-> Unit){
+    fun login (datos: Login, onResponseCallback: (loginResponse?)-> Unit){
         viewModelScope.launch {
-            val call = RetrofitClient.webService.Login(datosLogin)
-            call.enqueue(object : Callback<loginResponse>{
+            val call = RetrofitClient.webService.login(datosLogin)
+            call.enqueve(object : Callback<loginResponse>{
                 override fun onResponse(
                     call: Call <loginResponse>,
                     response: Response<loginResponse>
-                ){
-                    if (response.isSuccessful){
-
-                    }else{
-                        onResponseCallback(null)
-                    }
-                }
-
-                override fun onFailure(call: Call<loginResponse>, t: Throwable) {
-                    onResponseCallback(null)
-
-                }
-            }
-                ) }
+                ){}}
+                )
+        }
     }
+
+    fun CreateIngredient (datos: Ingredient, onResponseCallback: (IngredientResponse?)-> Unit){
+        viewModelScope.launch {
+            val api = RetrofitClient.webService.Ingredient(datos)
+            api.enqueue(object: Callback<IngredientResponse> {
+
+
+            }
+        }
+
+    }
+
 }
