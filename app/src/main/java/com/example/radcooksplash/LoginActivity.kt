@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.radcooksplash.Models.Login
 import com.example.radcooksplash.viewModel.ViewModel
@@ -28,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
         // Obtener referencias a las vistas
         etLoginEmail = findViewById(R.id.etLoginEmail)
@@ -49,6 +50,9 @@ class LoginActivity : AppCompatActivity() {
             val email = etLoginEmail.text.toString()
             val contraseña = etLoginPassword.text.toString()
 
+            Log.d("EMAIL","$email")
+            Log.d("CONTRASEÑA","$contraseña")
+
             if (email.isNotEmpty()&& contraseña.isNotEmpty()){
                 iniciarSesion(email, contraseña)
             }else{
@@ -62,7 +66,7 @@ private fun iniciarSesion(usuario:String,contraseña:String){
         email = usuario,
         contraseña = contraseña
     )
-    viewModel.initSeccion(datosLogin){respuesta ->
+    viewModel.login(datosLogin){respuesta ->
         if (respuesta !=null){
             val gson = Gson()
             val json = gson.toJson(respuesta)

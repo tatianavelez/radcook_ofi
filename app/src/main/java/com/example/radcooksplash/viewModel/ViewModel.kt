@@ -50,12 +50,24 @@ class ViewModel(application: Application): AndroidViewModel(application) {
 
     fun login (datos: Login, onResponseCallback: (loginResponse?)-> Unit){
         viewModelScope.launch {
-            val call = RetrofitClient.webService.login(datosLogin)
-            call.enqueve(object : Callback<loginResponse>{
+            val call = RetrofitClient.webService.Login(datos)
+            call.enqueue(object : Callback<loginResponse>{
                 override fun onResponse(
                     call: Call <loginResponse>,
                     response: Response<loginResponse>
-                ){}}
+                ){
+                    if(response.isSuccessful){
+                        onResponseCallback(response.body())
+                    }else{
+                        onResponseCallback(null)
+                    }
+
+                }
+
+                override fun onFailure(call: Call<loginResponse>, t: Throwable) {
+                    onResponseCallback(null)
+                }
+            }
                 )
         }
     }
@@ -64,9 +76,19 @@ class ViewModel(application: Application): AndroidViewModel(application) {
         viewModelScope.launch {
             val api = RetrofitClient.webService.Ingredient(datos)
             api.enqueue(object: Callback<IngredientResponse> {
+                override fun onResponse(
+                    call: Call<IngredientResponse>,
+                    response: Response<IngredientResponse>
+                ) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onFailure(call: Call<IngredientResponse>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
 
 
-            }
+            })
         }
 
     }
