@@ -26,16 +26,11 @@ class Ingredient : AppCompatActivity() {
 
         // tipo de recetas
         val items = listOf(
-            "Fruta","Verdura",
-            "Carne","Pescado" ,
-            "Lácteos0","Cereales" ,
-            "Legumbres", "Hierbas y Especias",
-            "Aceites y Grasas", "Frutos Secos",
-            "Mariscos","Huevos",
-            "Salsas","Bebidas",
-            "Postres","Pan y Panadería",
-            "Dulces","Condimentos",
-            "Café y Té","Congelados")
+            "Fruta","Verdura", "Carne","Pescado" ,
+            "Lácteos0","Cereales" , "Legumbres", "Hierbas y Especias",
+            "Aceites y Grasas", "Frutos Secos", "Mariscos","Huevos",
+            "Salsas","Bebidas", "Postres","Pan y Panadería",
+            "Dulces","Condimentos", "Café y Té","Congelados")
 
         val autoComplete = findViewById<AutoCompleteTextView>(R.id.autoCompleteIngredient)
         val adapter = ArrayAdapter(this, R.layout.items_pqrs, items)

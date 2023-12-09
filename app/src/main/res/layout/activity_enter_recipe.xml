@@ -64,7 +64,7 @@
         <AutoCompleteTextView
             android:id="@+id/autoCompleteRecipe"
             android:layout_width="237dp"
-            android:layout_height="94dp"
+            android:layout_height="74dp"
             android:fontFamily="@font/poppins_semibold"
             android:hint="Tipo De Categoria"
             android:inputType="none" />
@@ -73,8 +73,8 @@
 
     <EditText
         android:id="@+id/createIngredientes"
-        android:layout_width="300dp"
-        android:layout_height="88dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="73dp"
@@ -90,12 +90,12 @@
 
     <EditText
         android:id="@+id/description"
-        android:layout_width="300dp"
-        android:layout_height="88dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="73dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="380dp"
         android:layout_marginEnd="37dp"
         android:layout_marginBottom="203dp"
         android:fontFamily="@font/poppins_semibold"
@@ -120,5 +120,25 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-52dp"
         tools:layout_editor_absoluteY="512dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="296dp"
+        android:layout_height="124dp"
+        android:layout_below="@+id/title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="45dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteIngredientes"
+            android:layout_width="277dp"
+            android:layout_height="84dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Ingrdientes"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>

@@ -18,4 +18,6 @@ class Recipe (
     @SerializedName("image")
     var image: String,
 
+    @SerializedName("ingredients")
+    var ingredients: Array<Ingredient>,
 )

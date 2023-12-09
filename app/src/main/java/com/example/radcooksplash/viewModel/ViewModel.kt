@@ -5,6 +5,8 @@ import android.app.Application
 import android.telephony.TelephonyManager.UssdResponseCallback
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.radcooksplash.Models.Ingredient
 import com.example.radcooksplash.Models.Login
@@ -13,6 +15,7 @@ import com.example.radcooksplash.response.IngredientResponse
 import com.example.radcooksplash.response.loginResponse
 import com.example.radcooksplash.response.registerResponse
 import com.example.radcooksplash.service.RetrofitClient
+import com.example.radcooksplash.service.RetrofitClient.webService
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -91,6 +94,26 @@ class ViewModel(application: Application): AndroidViewModel(application) {
             })
         }
 
+    }
+
+
+    private var _Ingredient = MutableLiveData<List<Ingredient>>()
+    val Ingredient: LiveData<List<Ingredient>> get()= _Ingredient
+
+    fun loadIngredients() {
+        webService.getIngredient().enqueue(object : Callback<List<Ingredient>> {
+            override fun onResponse(call: Call<List<Ingredient>>, response: Response<List<Ingredient>>) {
+                if (response.isSuccessful) {
+                    _Ingredient.value = response.body()
+                } else {
+                    Log.d("error","${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Ingredient>>, t: Throwable) {
+                // Manejar errores de red
+            }
+        })
     }
 
 }
