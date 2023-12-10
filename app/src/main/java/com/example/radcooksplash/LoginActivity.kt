@@ -61,36 +61,25 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-private fun iniciarSesion(usuario:String,contraseña:String){
-    val datosLogin = Login(
-        email = usuario,
-        contraseña = contraseña
-    )
-    viewModel.login(datosLogin){respuesta ->
-        if (respuesta !=null){
-            val gson = Gson()
-            val json = gson.toJson(respuesta)
-            Log.d("Respuesta JSON", json)
+    private fun iniciarSesion(usuario:String,contraseña:String){
+        val datosLogin = Login(
+            email = usuario,
+            contraseña = contraseña
+        )
+        viewModel.login(datosLogin){respuesta ->
+            if (respuesta !=null){
+                val gson = Gson()
+                val json = gson.toJson(respuesta)
+                Log.d("Respuesta JSON", json)
 
-            val intent = Intent (this@LoginActivity, HomeActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this@LoginActivity,"Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-            finish()
-        }else{
-            Toast.makeText(this,"Error inicio de sesión", Toast.LENGTH_SHORT).show()
+                val intent = Intent (this@LoginActivity, HomeActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this@LoginActivity,"Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                finish()
+            }else{
+                Toast.makeText(this,"Error inicio de sesión", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-}
-    //private fun loginUser() {
-       // val email = etLoginEmail.text.toString().trim()
-       // val password = etLoginPassword.text.toString().trim()
 
-        // Validar que los campos no estén vacíos
-       // if (email.isEmpty() || password.isEmpty()) {
-           // Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
-           // return
-       // }
-
-
-  //  }
 }

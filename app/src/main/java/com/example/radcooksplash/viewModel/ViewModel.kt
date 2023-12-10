@@ -35,13 +35,13 @@ class ViewModel(application: Application): AndroidViewModel(application) {
                     if(response.isSuccessful){
                         onResponseCallback(response.body())
                     }else{
-                        Log.d("error","Respuesta fallida ${response.errorBody()}")
+                        Log.d("error","Respuesta fallida  ${response.errorBody()}")
                         onResponseCallback(null)
                     }
                 }
 
                 override fun onFailure(call: Call<registerResponse>, t: Throwable) {
-                    Log.d("error","Respuesta incorreca ${t.message}")
+                    Log.d("error","Respuesta incorrecta ${t.message}")
                     onResponseCallback(null)
                 }
 
