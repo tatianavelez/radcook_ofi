@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.http.DELETE
 
 class ViewModel(application: Application): AndroidViewModel(application) {
 
@@ -39,15 +40,11 @@ class ViewModel(application: Application): AndroidViewModel(application) {
                         onResponseCallback(null)
                     }
                 }
-
                 override fun onFailure(call: Call<registerResponse>, t: Throwable) {
                     Log.d("error","Respuesta incorrecta ${t.message}")
                     onResponseCallback(null)
                 }
-
             })
-
-
         }
     }
 
@@ -64,9 +61,7 @@ class ViewModel(application: Application): AndroidViewModel(application) {
                     }else{
                         onResponseCallback(null)
                     }
-
                 }
-
                 override fun onFailure(call: Call<loginResponse>, t: Throwable) {
                     onResponseCallback(null)
                 }
@@ -75,43 +70,74 @@ class ViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    fun CreateIngredient (datos: Ingredient, onResponseCallback: (IngredientResponse?)-> Unit){
-        viewModelScope.launch {
-            val api = RetrofitClient.webService.Ingredient(datos)
-            api.enqueue(object: Callback<IngredientResponse> {
-                override fun onResponse(
-                    call: Call<IngredientResponse>,
-                    response: Response<IngredientResponse>
-                ) {
-                    TODO("Not yet implemented")
-                }
+    //CRUD DE INGREDIENTES
+    private val _ingredients = MutableLiveData<List<Ingredient>>()
+    val ingredients: LiveData<List<Ingredient>> get() = _ingredients
 
-                override fun onFailure(call: Call<IngredientResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-
-            })
-        }
-
-    }
-
-
-    private var _Ingredient = MutableLiveData<List<Ingredient>>()
-    val Ingredient: LiveData<List<Ingredient>> get()= _Ingredient
-
-    fun loadIngredients() {
-        webService.getIngredient().enqueue(object : Callback<List<Ingredient>> {
+    // Obtener la lista de ingredientes
+    fun getIngredients() {
+        RetrofitClient.webService.getIngredient().enqueue(object : Callback<List<Ingredient>> {
             override fun onResponse(call: Call<List<Ingredient>>, response: Response<List<Ingredient>>) {
                 if (response.isSuccessful) {
-                    _Ingredient.value = response.body()
+                    _ingredients.value = response.body()
                 } else {
-                    Log.d("error","${response.errorBody()}")
+                    // Manejar errores
                 }
             }
 
             override fun onFailure(call: Call<List<Ingredient>>, t: Throwable) {
-                // Manejar errores de red
+                Log.e("ViewModel", "Error de conexión: ${t.message}")
+            }
+        })
+    }
+
+    // Crear un nuevo ingrediente
+    fun createIngredient(ingredient: Ingredient) {
+        RetrofitClient.webService.createIngredient(ingredient).enqueue(object : Callback<IngredientResponse> {
+            override fun onResponse(call: Call<IngredientResponse>, response: Response<IngredientResponse>) {
+                if (response.isSuccessful) {
+                    getIngredients() // Actualizar lista después de la creación exitosa
+                } else {
+                    // Manejar errores
+                }
+            }
+
+            override fun onFailure(call: Call<IngredientResponse>, t: Throwable) {
+                Log.e("ViewModel", "Error de conexión: ${t.message}")
+            }
+        })
+    }
+
+    // Actualizar un ingrediente existente
+    fun updateIngredient(ingredient: Ingredient) {
+        RetrofitClient.webService.updateIngredient(ingredient.id, ingredient).enqueue(object : Callback<IngredientResponse> {
+            override fun onResponse(call: Call<IngredientResponse>, response: Response<IngredientResponse>) {
+                if (response.isSuccessful) {
+                    getIngredients() // Actualizar lista después de la actualización exitosa
+                } else {
+                    // Manejar errores
+                }
+            }
+
+            override fun onFailure(call: Call<IngredientResponse>, t: Throwable) {
+                Log.e("ViewModel", "Error de conexión: ${t.message}")
+            }
+        })
+    }
+
+    // Eliminar un ingrediente
+    fun deleteIngredient(ingredientId: Int) {
+        RetrofitClient.webService.deleteIngredient(ingredientId).enqueue(object : Callback<IngredientResponse> {
+            override fun onResponse(call: Call<IngredientResponse>, response: Response<IngredientResponse>) {
+                if (response.isSuccessful) {
+                    getIngredients() // Actualizar lista después de la eliminación exitosa
+                } else {
+                    // Manejar errores
+                }
+            }
+
+            override fun onFailure(call: Call<IngredientResponse>, t: Throwable) {
+                Log.e("ViewModel", "Error de conexión: ${t.message}")
             }
         })
     }

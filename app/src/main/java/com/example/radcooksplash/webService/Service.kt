@@ -11,8 +11,11 @@ import com.example.radcooksplash.response.registerResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
 
 interface Service {
     @POST("registro")
@@ -21,15 +24,18 @@ interface Service {
     @POST ("login")
     fun Login(@Body datosLogin : Login): Call<loginResponse>
 
-    @POST ("ingredient")
-    fun Ingredient(@Body datosIngredient : Ingredient): Call<IngredientResponse>
-
-    @POST ("recipe/create")
-    fun RecipeCreate(@Body datosRecipe : Recipe): Call<RecipeResponse>
+    @POST("ingredient")
+    fun createIngredient(@Body ingredient: Ingredient): Call<IngredientResponse>
 
     @GET("ingredients")
     fun getIngredient(): Call<List<Ingredient>>
 
+    @PUT("ingredients")
+    fun updateIngredient(@Path("id") id: Int, @Body datosIngredient: Ingredient): Call<IngredientResponse>
 
+    @DELETE("ingredients")
+    fun deleteIngredient(@Path("id") id: Int): Call<IngredientResponse>
 
+    // @POST ("recipe/create")
+    //fun RecipeCreate(@Body datosRecipe : Recipe): Call<RecipeResponse>
 }

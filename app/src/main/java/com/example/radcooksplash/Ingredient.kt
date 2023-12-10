@@ -12,6 +12,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 
 class Ingredient : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingredient)
@@ -27,7 +28,7 @@ class Ingredient : AppCompatActivity() {
         // tipo de recetas
         val items = listOf(
             "Fruta","Verdura", "Carne","Pescado" ,
-            "Lácteos0","Cereales" , "Legumbres", "Hierbas y Especias",
+            "Lácteos","Cereales" , "Legumbres", "Hierbas y Especias",
             "Aceites y Grasas", "Frutos Secos", "Mariscos","Huevos",
             "Salsas","Bebidas", "Postres","Pan y Panadería",
             "Dulces","Condimentos", "Café y Té","Congelados")
