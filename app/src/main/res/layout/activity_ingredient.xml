@@ -80,6 +80,7 @@
         android:layout_marginEnd="38dp"
         android:layout_marginBottom="191dp"
         android:backgroundTint="#009846"
+        android:textColor="@color/colorAccent"
         android:text="Aceptar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-52dp"

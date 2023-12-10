@@ -83,6 +83,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#009846"
         android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/colorAccent"
         android:text="Iniciar sesión"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-52dp"

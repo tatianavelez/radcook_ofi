@@ -47,6 +47,7 @@
         android:layout_marginEnd="134dp"
         android:layout_marginBottom="361dp"
         android:backgroundTint="#009846"
+        android:textColor="@color/colorAccent"
         android:fontFamily="@font/poppins_semibold"
         android:text="Enviar comentario" />
 
