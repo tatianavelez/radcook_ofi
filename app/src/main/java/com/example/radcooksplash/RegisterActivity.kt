@@ -1,5 +1,6 @@
 package com.example.radcooksplash
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -57,9 +58,14 @@ class RegisterActivity : AppCompatActivity() {
                 val res = respuesta?.status.toString()
                 Log.d("Respuesta api", res)
                 if (res == "ok") {
-                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Registro Fallido", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Registro fallido", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+
+                    // Redirigir a la pantalla de inicio de sesión
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
             }
         } else {

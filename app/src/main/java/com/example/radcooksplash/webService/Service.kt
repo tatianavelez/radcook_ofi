@@ -21,7 +21,7 @@ interface Service {
     @POST ("login")
     fun Login(@Body datosLogin : Login): Call<loginResponse>
 
-    @POST ("ingredient/create")
+    @POST ("ingredient")
     fun Ingredient(@Body datosIngredient : Ingredient): Call<IngredientResponse>
 
     @POST ("recipe/create")
@@ -29,5 +29,7 @@ interface Service {
 
     @GET("ingredients")
     fun getIngredient(): Call<List<Ingredient>>
+
+
 
 }

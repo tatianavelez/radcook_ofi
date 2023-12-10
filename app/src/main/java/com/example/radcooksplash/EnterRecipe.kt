@@ -66,21 +66,18 @@ class EnterRecipe : AppCompatActivity() {
     }
 
     fun ingredientes(){
-        viewModel.Ingredient.observe(this, { ingredients ->
+        viewModel.Ingredient.observe(this) { ingredients ->
             val ingredientNames =
-                ingredients.map { it.name } // Suponiendo que 'name' es el campo en Ingredient
+                ingredients.map { it.name }
 
-            // Configurar el AutoCompleteTextView con la lista de nombres de ingredientes
             val adapter =
                 ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, ingredientNames)
             AutoIngredientes.setAdapter(adapter)
 
-            // Manejar la selección de ingredientes múltiples
             AutoIngredientes.setOnItemClickListener { _, _, position, _ ->
                 val selectedIngredient = ingredients[position]
-                selectedIngredientIds.add(selectedIngredient.id) // Almacena el ID del ingrediente seleccionado
-                // Puedes mostrar una lista de los IDs seleccionados o realizar otras acciones aquí
+                selectedIngredientIds.add(selectedIngredient.id)
             }
-        })
+        }
     }
 }

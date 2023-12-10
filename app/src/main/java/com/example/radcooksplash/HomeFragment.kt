@@ -48,6 +48,9 @@ class HomeFragment : Fragment() {
             val intent = Intent(context, Search::class.java)
             context.startActivity(intent)
         }
+
+
+
         forumCard.setOnClickListener {
             val context = requireContext()
             val intent = Intent(context, Forum::class.java)
