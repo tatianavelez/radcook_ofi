@@ -28,8 +28,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
-
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +39,8 @@ class HomeFragment : Fragment() {
         val forumCard = rootView.findViewById<CardView>(R.id.forumCard)
         val enterrecipeCard = rootView.findViewById<CardView>(R.id.enterrecipeCard)
         val favoritetCard = rootView.findViewById<CardView>(R.id.favoritetCard)
+        val enteringredientCard = rootView.findViewById<CardView>(R.id.enteringredientCard)
+
 
 
         searchCard.setOnClickListener {
@@ -48,6 +48,8 @@ class HomeFragment : Fragment() {
             val intent = Intent(context, Search::class.java)
             context.startActivity(intent)
         }
+
+
 
 
 
@@ -65,6 +67,13 @@ class HomeFragment : Fragment() {
         favoritetCard.setOnClickListener {
             val context = requireContext()
             val intent = Intent(context, Favorite::class.java)
+            context.startActivity(intent)
+        }
+
+
+        enteringredientCard.setOnClickListener {
+            val context = requireContext()
+            val intent = Intent(context, Ingredient ::class.java)
             context.startActivity(intent)
         }
 
