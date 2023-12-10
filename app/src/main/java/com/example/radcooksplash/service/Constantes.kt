@@ -1,5 +1,5 @@
 package com.example.radcooksplash.service
 
 object Constantes {
-    val BASE_URL = "https://radcookproject1-production-cb54.up.railway.app/api/"
+    val BASE_URL = "https://apis-intento4-production.up.railway.app/api/"
 }

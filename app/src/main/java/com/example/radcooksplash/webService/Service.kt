@@ -18,7 +18,7 @@ interface Service {
     @POST("user/create/v2")
     fun Registrar(@Body datosRegistro: Register): Call<registerResponse>
 
-    @POST ("login/v2")
+    @POST ("login")
     fun Login(@Body datosLogin : Login): Call<loginResponse>
 
     @POST ("ingredient/create")
