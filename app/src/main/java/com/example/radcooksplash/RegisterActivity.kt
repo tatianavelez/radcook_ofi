@@ -45,7 +45,8 @@ class RegisterActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etPassword)
 
         // Validar que los campos no estén vacíos
-        if (etName.text.toString().isNotEmpty() && etEmail.text.toString().isNotEmpty() && etPassword.text.toString().isNotEmpty()) {
+        if (etName.text.toString().isNotEmpty() && etEmail.text.toString().isNotEmpty()
+            && etPassword.text.toString().isNotEmpty()) {
             val DatosRegistro = Register(
                 nombre = etName.text.toString(),
                 correo = etEmail.text.toString(),
@@ -59,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
                 if (res == "ok") {
                     Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Registro fallido", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Registro fallido ", Toast.LENGTH_SHORT).show()
                 }
             }
         } else {
