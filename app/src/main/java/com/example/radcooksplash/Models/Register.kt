@@ -11,6 +11,4 @@ class Register
     @SerializedName("password")
     var contraseña: String,
 
-    @SerializedName("password_confirmation")
-    var Confirmarcontraseña: String,
 )

@@ -15,7 +15,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface Service {
-    @POST("user/create/v2")
+    @POST("/registro")
     fun Registrar(@Body datosRegistro: Register): Call<registerResponse>
 
     @POST ("login")

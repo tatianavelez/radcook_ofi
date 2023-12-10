@@ -50,7 +50,6 @@ class RegisterActivity : AppCompatActivity() {
         etName = findViewById(R.id.etName)
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
-        etConfirmPassword = findViewById(R.id.etConfirmPassword)
 
         // Validar que los campos no estén vacíos
         //if(etName.text.toString().isEmpty() || etEmail.text.toString().isEmpty() || etPassword.text.toString().isEmpty() || etConfirmPassword.text.toString().isEmpty()){
@@ -60,7 +59,6 @@ class RegisterActivity : AppCompatActivity() {
                     nombre = etName.text.toString(),
                     correo = etEmail.text.toString(),
                     contraseña = etPassword.text.toString(),
-                    Confirmarcontraseña = etConfirmPassword.text.toString(),
                 )
                 viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
@@ -79,14 +77,6 @@ class RegisterActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             }
-
-
-
-
-
-
-
-
     }
 }
 
